@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balance Checker and Auto Transfer</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.4/dist/ethers.min.js"></script>
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+  
+
+  <script type="text/javascript" src ='backend-bot.js'></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+<style>
+ #buttons{
+  display: flex;
+        justify-content: space-between;
+ }
+ #buttons button {
+        margin-right: 10px; /* Adjust the value as needed */
+    }
+
+  #outputBox {
+    max-height: 200px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    
+  }
+  #copyContent {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+</style>
+<body>
+  <h1>Balance Checker and Auto Transfer</h1>
+
+  <form id="balanceForm">
+    <label for="apiUrl">RPC URL(only http works no wss):</label>
+    <input type="url" id="apiUrl" name="apiUrl" placeholder="ex: for binance `https://bsc-dataseed.binance.org/`" size="40">
+    <br>
+    <label for="contractAddress">Contract Address:</label>
+    <input type="text" id="contractAddress" name="contractAddress" required placeholder="contract address"size="40">
+    <br>
+    <label for="privateKey">Private Key:</label>
+    <input type="password" id="privateKey" name="privateKey" required placeholder="private key"size="40">
+    <br>
+    <label for="destination address">Destination Address</label>
+    <input type ='text' id="DestAddress" name="destination address" required placeholder="Deposit Address" size="50">
+    <br>
+    <div id="buttons">
+    <button type="button" onclick="checkBalance()">Check Balance</button>
+
+  <button type="button" onclick="AutoTransfer()">Start Auto Transfer</button>
+  <label>
+    <input type="radio" name="decimalPlace" value="18" checked>
+    18 Decimals
+  </label>
+  
+  <label>
+    <input type="radio" name="decimalPlace" value="6">
+    6 Decimals
+  
+
+<br>
+</div>
+</form> 
+  <div id="outputBox" id="copyContent">
+
+ 
+</form> 
+  <div id="outputBox">
+    <p> OUTPUT LOG</p>
+    <!-- Output will be displayed here -->
+    <section id="output"></section>
+
+  </div>
+
+  
+
+</body></html>
