@@ -20,7 +20,7 @@ facedetect = cv2.CascadeClassifier('data/haarcascade_frontalface_default.xml')
 
 with open('names.pkl', 'rb') as w:
     LABELS = pickle.load(w)
-with open('faces_data.pkl', 'rb') as f:
+with open('faces.pkl', 'rb') as f:
     FACES = pickle.load(f)
 
 print('Shape of Faces matrix --> ', FACES.shape)
